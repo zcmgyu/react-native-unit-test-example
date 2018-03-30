@@ -14,6 +14,10 @@ export class RepoPage extends Component {
     this.props.getRepos();
   }
 
+  handleSomething = name => {
+    return 'Hello, ' + name;
+  };
+
   render() {
     const { isLoading, repos, selected } = this.props.repos;
     return (
@@ -48,7 +52,7 @@ RepoPage.propTypes = {
   repos: PropTypes.object.isRequired,
   selectRepo: PropTypes.func,
   selected: PropTypes.bool
-}
+};
 
 const mapStateToProps = state => ({ repos: state.repos });
 const mapDispatchToProps = dispatch => ({

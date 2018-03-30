@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { RepoPage } from '../RepoPage';
 import repos from '../../../config/jest/dataMock';
 
@@ -17,4 +18,13 @@ it('renders a RepoPage using Snapshots', () => {
 
   component = _getComponent({ isLoading: false, repos });
   expect(component).toMatchSnapshot();
+});
+
+it('Test func inside RepoPage', () => {
+  const props = { isLoading: false, repos: [] };
+  const wrapper = renderer.create(
+    <RepoPage repos={props} getRepos={jest.fn()} />
+  );
+  const instance = wrapper.getInstance();
+  expect(instance.handleSomething('John Doe')).toMatchSnapshot();
 });

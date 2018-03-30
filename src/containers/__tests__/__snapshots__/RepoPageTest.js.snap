@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test func inside RepoPage 1`] = `"Hello, John Doe"`;
+
 exports[`renders a RepoPage using Snapshots 1`] = `
 <View
   style={
